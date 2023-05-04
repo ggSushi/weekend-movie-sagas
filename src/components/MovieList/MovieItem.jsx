@@ -1,5 +1,7 @@
 import {useHistory} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import Card from '@mui/material/Card';
+import './MovieList.css'
 
 function MovieItem({ movie }) {
   const history = useHistory();
@@ -12,10 +14,12 @@ function MovieItem({ movie }) {
   }
 
   return (
-    <>
-      <h3>{movie.title}</h3>
+    <div>
+      <Card sx={{ maxwidth: 200, margin: 3}}>
+      <h2>{movie.title}</h2>
       <img onClick={detailsPush} src={movie.poster} alt={movie.title} />
-    </>
+      </Card>
+    </div>
   )
 }
 
