@@ -8,8 +8,6 @@ function Details() {
   const dispatch = useDispatch();
 
   const movieItem = useSelector(store => store.movieItem);
-  // !! there has to be a better way.
-  const movie = movieItem[0];
   const movieId = useSelector(store => store.movieId);
 
   const fetchMovieItem = () => {
@@ -24,18 +22,35 @@ function Details() {
       console.log(`Error in fetchMovieItem: ${error}`);
       alert(`Something went quite wrong.`)
     })
+  } // end fetchMovieItem
+
+  const homeButton = () => {
+    history.push('/');
   }
 
   useEffect(() => {
     fetchMovieItem()
     // console.log(`MovieId: ${movieId}`);
-    console.log(movie)
   }, [])
 
   return(
     <>
     <h1>Details Page</h1>
-    
+    <hr />
+    {
+      movieItem.map(movie => (
+        <div key={movie.id}>
+          <h3>{movie.movie_title}</h3>
+          <br />
+          <img src={movie.poster} />
+          <br />
+          <b>{movie.genres}</b>
+          <br />
+          <i>{movie.description}</i>
+        </div>
+      ))
+    }
+    <button onClick={homeButton}>Back to List</button>
     </>
   )
 }

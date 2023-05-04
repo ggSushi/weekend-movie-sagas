@@ -81,3 +81,11 @@ VALUES
 (14,1), (14,2), (14,4);   -- Toy Story
 
 
+-- TEST ---------
+-- STRING_AGG (a.name, 'separator ,') .... GROUP BY id of some type.
+
+Select "movies"."title" as "movie_title", "movies"."poster", "movies"."description", STRING_AGG("genres"."name", ', ') as "genres" from movies
+join movies_genres on movies.id = movies_genres.movie_id
+join genres on genres.id = movies_genres.genre_id
+WHERE "movies"."id" = $1
+GROUP BY "movies"."id";
