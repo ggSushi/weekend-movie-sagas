@@ -29,7 +29,8 @@ router.get('/:id', (req, res) => {
 
   pool.query(queryText, [req.params.id])
     .then((result) => {
-      res.sendStatus(200);
+      // console.log(`id`, req.params.id)
+      res.send(result.rows);
     }).catch((error) => {
       console.log(`Error in GET movie at ID: ${error}`);
       res.sendStatus(500);

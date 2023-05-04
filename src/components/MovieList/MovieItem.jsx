@@ -7,6 +7,7 @@ function MovieItem({ movie }) {
 
   const detailsPush = () => {
     dispatch({ type: 'SET_MOVIE_ID', payload: movie.id})
+    console.log(`movie id: ${movie.id}`);
     history.push('/details');
   }
 
