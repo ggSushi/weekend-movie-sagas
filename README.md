@@ -1,9 +1,28 @@
-# Project Name
+# **Movie Sagas**
+---
+### **_Movie Database_**
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+This app aims to display a database of movies, complete with Title, Poster Art, List of genres, and description for the movies. 
 
-## Description
+Simply click on the Poster art for the movie, and it will take you to the details page for that movie.
 
-Your project description goes here. What problem did you solve? How did you solve it?
+---
+## Database Setup
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+1. Create a database named `saga_movies_weekend`
+2. Run the queries from `database.sql` on the `saga_movies_weekend` database
+
+## Install Dependencies
+
+1. `npm install`
+2. `npm run server`
+3. `npm run client`
+
+---
+
+### **_Technologies Used:_**
+- JavaScript, HTML, CSS
+- React, React Redux, Redux-Sagas
+- Axios
+- NodeJS, ExpressJS
+- PostgreSQL
